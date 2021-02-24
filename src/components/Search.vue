@@ -13,7 +13,7 @@
 		<v-btn
 			v-if="users.length"
 			class="btn btn-light btn-block"
-			onClick="clearUserSearch"
+			@click="clearUserSearch"
 		>
 			Clear
 		</v-btn>

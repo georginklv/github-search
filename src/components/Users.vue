@@ -1,12 +1,14 @@
 <template>
-	<div>
-		<v-card class="card grid-2">
+	<div class="boxes" v-if="users.length">
+		<v-card class="grid-2 card" v-for="user in users" :key="user.id">
 			<div class="all-center">
-				<v-img :src="users.avatar_url" class="round-img" alt="" />
-				<h1>{{ users.name }}</h1>
+				<v-img :src="user.avatar_url" class="round-img" alt="" />
+				<h1>{{ user.login }}</h1>
+
 				<router-link
 					:to="`/users/${user.login}`"
 					class="btn btn-dark btn-sm my-1"
+					@click="getCurrentUser(user)"
 				>
 					More
 				</router-link>
@@ -16,19 +18,28 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 export default {
 	data() {
-		return {
-			inputText: '',
-			isLoading: false,
-		};
+		return {};
 	},
 	computed: {
 		...mapState('users', ['users']),
 	},
-	methods: {},
+	methods: {
+		...mapActions('users', ['getUsers', 'getUser']),
+		getCurrentUser(user) {
+			this.getUser(user);
+		},
+	},
+	mounted() {},
 };
 </script>
 
-<style></style>
+<style>
+.boxes {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+</style>

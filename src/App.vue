@@ -51,6 +51,10 @@ a {
 	text-decoration: none;
 }
 
+.v-application a {
+	color: #fff !important;
+}
+
 a:hover {
 	color: #666;
 }
@@ -324,7 +328,7 @@ img {
 
 .round-img {
 	border-radius: 50%;
-	width: 150px;
+	width: 60px;
 }
 
 /* Forms */
