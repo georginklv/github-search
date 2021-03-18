@@ -74,9 +74,6 @@ export default {
 	},
 	methods: {
 		...mapActions('users', ['getUser', 'getCurentUserRepos']),
-		asd() {
-			console.log(this.currentUser);
-		},
 	},
 	async mounted() {
 		this.isLoading = true;
