@@ -1,5 +1,8 @@
 # github-search
+App rewritten from React, used Vue 2.
+
 DEMO https://github-search-vue-from-react.netlify.app/
+
 ## Project setup
 ```
 npm install
